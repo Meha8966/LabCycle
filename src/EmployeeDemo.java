@@ -1,61 +1,42 @@
-//25/06/26 CO3
+class EmployeeBase {
+    void calculateSalary() {
+        System.out.println("Employee Salary");
+    }
+}
+
+class Manager extends EmployeeBase {
+    @Override
+    void calculateSalary() {
+        System.out.println("Manager Salary : 4000");
+    }
+}
+
+class Developer extends EmployeeBase {
+    @Override
+    void calculateSalary() {
+        System.out.println("Developer Salary : 70000");
+    }
+}
+
+class Intern extends EmployeeBase {
+    @Override
+    void calculateSalary() {
+        System.out.println("Intern Salary : 5000");
+    }
+}
 
 public class EmployeeDemo {
     public static void main(String[] args) {
 
-        Manager m = new Manager(101, "Arun", 50000, "Sales", 15000);
+        EmployeeBase emp;
 
-        m.displayEmployee();
-        m.displayManager();
-    }
-}
+        emp = new Manager();
+        emp.calculateSalary();
 
-// Parent class
-class Employee {
+        emp = new Developer();
+        emp.calculateSalary();
 
-    int employeeId;
-    String employeeName;
-    double salary;
-
-    // Constructor
-    Employee(int employeeId, String employeeName, double salary) {
-        this.employeeId = employeeId;
-        this.employeeName = employeeName;
-        this.salary = salary;
-    }
-
-    // Display employee details
-    void displayEmployee() {
-        System.out.println("Employee Details");
-        System.out.println("----------------");
-        System.out.println("ID         : " + employeeId);
-        System.out.println("Name       : " + employeeName);
-        System.out.println("Salary     : " + salary);
-        System.out.println();
-    }
-}
-
-// Child class
-class Manager extends Employee {
-
-    String department;
-    double bonus;
-
-    // Constructor
-    Manager(int employeeId, String employeeName, double salary,
-            String department, double bonus) {
-
-        super(employeeId, employeeName, salary);
-
-        this.department = department;
-        this.bonus = bonus;
-    }
-
-    // Display manager details
-    void displayManager() {
-        System.out.println("Manager Details");
-        System.out.println("---------------");
-        System.out.println("Department : " + department);
-        System.out.println("Bonus      : " + bonus);
+        emp = new Intern();
+        emp.calculateSalary();
     }
 }
