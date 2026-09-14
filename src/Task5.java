@@ -1,4 +1,4 @@
- // 09/7/26CO3  CO3
+ // 09/7/26CO3  CO3Inheritance and Access Modifiers
 
  // Superclass
 class LibraryItem {
